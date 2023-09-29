@@ -1,7 +1,14 @@
-div{
+#try{
     border-radius: 50%;
     width: 100px;
     height: 100px;
+    background-color: #D9AC84;
+    border: 2px solid #BF5D39;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 body {
     background-color: #D9AC84;

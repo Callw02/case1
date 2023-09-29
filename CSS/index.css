@@ -1,8 +1,19 @@
-div{
+div {
     border-radius: 50%;
     width: 100px;
     height: 100px;
 }
+
 body {
     background-color: #D9AC84;
+}
+
+.wrapper1 {
+    width: 100vw;
+    height: 100vh;
+}
+
+#logo {
+    width: 300px;
+    height: 200px;
 }

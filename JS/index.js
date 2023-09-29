@@ -2,9 +2,10 @@
 
 function starting_page() {
     let body = document.querySelector("body");
-    let wrapper = document.createElement("div");
+    let wrapper1 = document.createElement("div");
+    wrapper1.classList.add("wrapper1");
 
-    wrapper.innerHTML = `
-    <img src=""> 
+    wrapper1.innerHTML = `
+    <img id="logo" src="../images/Untitled.png"> 
     `
 }

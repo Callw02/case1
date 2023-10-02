@@ -25,4 +25,4 @@ function timer(timeLeft){
     }, 1000)
 }
 
-timer(timeLeft);
+//timer(timeLeft);

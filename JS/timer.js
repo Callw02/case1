@@ -1,5 +1,3 @@
-let timeLeft = "12";
-
 function timer(timeLeft){   
     let timer = setInterval(function(){
       let timerElement = document.querySelector("#circleContainer")
@@ -25,4 +23,3 @@ function timer(timeLeft){
     }, 1000)
 }
 
-//timer(timeLeft);

@@ -68,7 +68,12 @@ function starting_page() {
         const boilButton = document.querySelector("#boil_button");
         boilButton.addEventListener("click", calculateCookingTime);
     }
-    let eggPreferences = {};
+    let eggPreferences = {
+        consistency: 0, // Initialize with default value
+        type: 0,        // Initialize with default value
+        size: 0,        // Initialize with default value
+        chilled: 0 
+    };
     function handleButtonClick(event) {
         const buttonId = event.target;
         console.log(buttonId);
@@ -131,13 +136,41 @@ function starting_page() {
             
         }
         console.log(eggPreferences);
+ 
+    }
+   
+    function calculateCookingTime(event) {
+        let body = document.querySelector("body");
+        
+        let wrapper2 = document.createElement("div");
+        //wrapper2.classList.add("wrapper2");
+        body.appendChild(wrapper2);
+        body.classList.add("countDownPage")
+        body.innerHTML = `
+        <div id="circleContainer">
+            <h1></h1>    
+        </div> 
+        <img id="egg" src="./images/Ellipse 110.png"></img> 
+        <button id="cook_button">START!</button>
+           
+        `
+       
+       
 
         let cookTime = eggPreferences.consistency + eggPreferences.type + eggPreferences.size + eggPreferences.chilled;
-        console.log(eggPreferences.consistency);
+        
+        let minutes = Math.floor(cookTime / 60);
+        let seconds = cookTime % 60;
+        let formattedMinutes = minutes.toString().padStart(2, '0');
+        let formattedSeconds = seconds.toString().padStart(2, '0');
+        document.querySelector("h1").textContent = `${formattedMinutes}:${formattedSeconds}`;
+        document.querySelector("#cook_button").addEventListener("click", startCountDown)
+
         
     }
-    function calculateCookingTime(event) {
-
+    function startCountDown(event){
+        let cookTime = eggPreferences.consistency + eggPreferences.type + eggPreferences.size + eggPreferences.chilled;
+        timer(cookTime)
     }
 }
 starting_page()

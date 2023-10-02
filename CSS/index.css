@@ -1,4 +1,4 @@
-#circleContainer{
+#circleContainer {
     border-radius: 50%;
     width: 200px;
     height: 200px;
@@ -27,15 +27,15 @@ body {
     align-items: center;
 }
 
-.option_containers div{
+.option_containers div {
     color: #BF5D39;
-    font-family:Arial, Helvetica, sans-serif
+    font-family: Arial, Helvetica, sans-serif
 }
 
 #logo {
     width: 200px;
     height: 90px;
-    
+
 }
 
 #start_button {
@@ -45,6 +45,12 @@ body {
     background-color: #BF5D39;
     color: #D9AC84;
     border: 0px;
+}
+
+:hover#start_button {
+    background-color: #C46F50;
+    cursor: pointer;
+
 }
 
 .wrapper2 {
@@ -67,7 +73,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    
+
 }
 
 #boil_button {
@@ -77,6 +83,11 @@ body {
     background-color: #BF5D39;
     border: 0px;
     color: #D9AC84;
+}
+
+:hover#boil_button {
+    background-color: #C46F50;
+    cursor: pointer;
 }
 
 .inner_container {
@@ -96,9 +107,15 @@ body {
     border-radius: 10px;
     color: #D9AC84;
     flex-grow: 1;
-   
+
 }
-img{
+
+:hover.option_buttons {
+    background-color: #C46F50;
+    cursor: pointer;
+}
+
+img {
     width: auto;
-    
+
 }

@@ -154,9 +154,6 @@ function starting_page() {
         <button id="cook_button">START!</button>
            
         `
-       
-       
-
         let cookTime = eggPreferences.consistency + eggPreferences.type + eggPreferences.size + eggPreferences.chilled;
         
         let minutes = Math.floor(cookTime / 60);

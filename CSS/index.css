@@ -2,15 +2,15 @@
     border-radius: 50%;
     width: 200px;
     height: 200px;
-    background-color: white;
-    position: absolute;
-    color: black;
+    background-color: #D9AC84;
+    border: 10px solid #BF5D39;
+    ;
+    color: white;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
-    z-index: 1;
+
 }
 
 body {
@@ -124,4 +124,45 @@ img {
     background-color: #C46F50;
     opacity: 0.7;
     cursor: alias;
+}
+
+.countDownPage {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#cook_button {
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    background-color: #BF5D39;
+    border: 0px;
+    color: #D9AC84;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1.0;
+    }
+}
+
+.blink {
+    animation: fade 1500ms infinite;
+
+}
+
+/* Apply the animation to elements */
+#circleContainer,
+#egg,
+#cook_button {
+    animation: fade 2s ease forwards;
 }

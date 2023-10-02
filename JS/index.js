@@ -58,6 +58,20 @@ function starting_page() {
         <button id="boil_button">Boil!</button>
         `;
 
+        const buttons = document.querySelectorAll(".option_buttons");
+        buttons.forEach(button => {
+            button.addEventListener("click", handleButtonClick);
+        });
+
+        const boilButton = document.querySelector("#boil_button");
+        boilButton.addEventListener("click", calculateCookingTime);
+    }
+    function handleButtonClick(event) {
+        const buttonId = event.target;
+        console.log(buttonId);
+    }
+    function calculateCookingTime(event) {
+
     }
 }
 starting_page()

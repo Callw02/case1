@@ -8,8 +8,8 @@ function starting_page() {
 
     wrapper1.innerHTML = `
     <img id="logo" src="./images/Untitled.png"></img> 
-
-    <button id="start_button">Options</button>
+    <img src="./images/Ellipse 110.png"></img> 
+    <button id="start_button">Preferences</button>
     
     `
     let start_button = document.querySelector("#start_button")

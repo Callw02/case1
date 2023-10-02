@@ -3,7 +3,7 @@
     width: 200px;
     height: 200px;
     background-color: white;
-position: absolute;
+    position: absolute;
     color: black;
     text-align: center;
     display: flex;
@@ -23,20 +23,28 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
 
+.option_containers div{
+    color: #BF5D39;
+    font-family:Arial, Helvetica, sans-serif
+}
+
 #logo {
-    width: 300px;
-    height: 200px;
+    width: 200px;
+    height: 90px;
+    
 }
 
 #start_button {
     width: 100px;
     height: 50px;
     border-radius: 15px;
-    background-color: #A66946;
+    background-color: #BF5D39;
+    color: #D9AC84;
+    border: 0px;
 }
 
 .wrapper2 {
@@ -53,19 +61,22 @@ body {
     width: 300px;
     height: 80px;
     background-color: #D9AC84;
-    border: 2px solid #A66946;
+    border: 5px solid #BF5D39;
     border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    
 }
 
 #boil_button {
     width: 100px;
     height: 50px;
     border-radius: 15px;
-    background-color: #A66946;
+    background-color: #BF5D39;
+    border: 0px;
+    color: #D9AC84;
 }
 
 .inner_container {
@@ -80,4 +91,14 @@ body {
 .option_buttons {
     width: auto;
     height: 25px;
+    background-color: #BF5D39;
+    border: 0px;
+    border-radius: 10px;
+    color: #D9AC84;
+    flex-grow: 1;
+   
+}
+img{
+    width: auto;
+    
 }

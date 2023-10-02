@@ -15,19 +15,69 @@ position: absolute;
 
 body {
     background-color: #D9AC84;
-}
-/*
-#circleContainer:hover .semicircle:nth-child(1){
-    transform: rotate(180deg);
-    transition: 1s linear;
-}
-#circleContainer:hover .semicircle:nth-child(2){
-    transform: rotate(360deg);
-    transition: 2s linear;
-}
-#circleContainer:hover .semicircle:nth-child(3){
-    opacity: 0;
-    transition: opacity 0s 1s;
+    margin: 0;
 }
 
-*/
+.wrapper1 {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo {
+    width: 300px;
+    height: 200px;
+}
+
+#start_button {
+    width: 100px;
+    height: 50px;
+    border-radius: 15px;
+    background-color: #A66946;
+}
+
+.wrapper2 {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.option_containers {
+    width: 300px;
+    height: 80px;
+    background-color: #D9AC84;
+    border: 2px solid #A66946;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#boil_button {
+    width: 100px;
+    height: 50px;
+    border-radius: 15px;
+    background-color: #A66946;
+}
+
+.inner_container {
+
+    width: 100%;
+    gap: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.option_buttons {
+    width: auto;
+    height: 25px;
+}

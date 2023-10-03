@@ -1,6 +1,7 @@
 function timer(timeLeft){   
     let timer = setInterval(function(){
         let timerElement = document.querySelector("#circleContainer")
+        timerElement.classList.remove("blink");
        
         let minutes = Math.floor(timeLeft / 60);
         let seconds = timeLeft % 60;
@@ -16,20 +17,20 @@ function timer(timeLeft){
         console.log(`${formattedMinutes}:${formattedSeconds}`);
         timeLeft--;
 
-        if (timeLeft === 299) {
-            document.getElementById("egg").src = "./images/cracks.png"
+        if (timeLeft === 350) {
+            changeEggImage("./images/cracks.png")
         }
         if (timeLeft === 239) {
-            document.getElementById("egg").src = "./images/crackscrack2.png"
+            changeEggImage("./images/crackscrack2.png")
         }
         if (timeLeft === 179) {
-            document.getElementById("egg").src = "./images/crackscrack3.png"
+            changeEggImage("./images/crackscrack3.png")
         }
         if (timeLeft === 119) {
-            document.getElementById("egg").src = "./images/crackscrack4.png"
+            changeEggImage("./images/crackscrack4.png")
         }
         if (timeLeft === 59) {
-            document.getElementById("egg").src = "./images/crackscrack5.png"
+            changeEggImage("./images/crackscrack5.png")
         }
         
         
@@ -41,3 +42,15 @@ function timer(timeLeft){
     }, 1000)
 }
 
+function changeEggImage(imageSrc) {
+    let timerElement = document.querySelector("#circleContainer")
+    
+
+    const eggElement = document.getElementById("egg");
+    eggElement.src = imageSrc;
+    eggElement.classList.add("wiggle");
+
+    setTimeout(() => {
+      eggElement.classList.remove("wiggle");
+    }, 500); 
+  }

@@ -148,9 +148,7 @@ img {
     cursor: pointer;
     background-color: #C46F50;
 }
-#circleContainer{
 
-}
 
 @keyframes fade {
     from {
@@ -167,9 +165,30 @@ img {
 
 }
 
-/* Apply the animation to elements */
 #circleContainer,
 #egg,
 #cook_button {
     animation: fade 1s ease forwards;
 }
+
+@keyframes wiggle {
+    0% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-5px);
+    }
+    50% {
+      transform: translateX(5px);
+    }
+    75% {
+      transform: translateX(-5px);
+    }
+    100% {
+      transform: translateX(5px);
+    }
+  }
+  
+  .wiggle {
+    animation: wiggle 0.5s ease infinite;
+  }

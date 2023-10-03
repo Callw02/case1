@@ -1,7 +1,5 @@
 "use strict"
 
-
-
 function starting_page() {
     let body = document.querySelector("body");
     let wrapper1 = document.createElement("div");
@@ -171,8 +169,6 @@ function starting_page() {
         <button id="cook_button">START!</button>
            
         `
-
-
 
         let cookTime = eggPreferences.consistency + eggPreferences.type + eggPreferences.size + eggPreferences.chilled;
 

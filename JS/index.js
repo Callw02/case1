@@ -92,6 +92,13 @@ function starting_page() {
                 button.disabled = false;
                 button.classList.remove("disabled")
             });
+            if (buttonId.textContent === "QUAIL" || buttonId.textContent === "OSTRICH") {
+                const sizeButtons = document.querySelectorAll("#size .option_buttons");
+                sizeButtons.forEach(sizeButton => {
+                    sizeButton.disabled = true;
+                    sizeButton.classList.add("disabled")
+                });
+            }
         }
 
 

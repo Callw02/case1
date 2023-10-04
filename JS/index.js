@@ -8,10 +8,48 @@ function starting_page() {
 
     wrapper1.innerHTML = `
     <img id="logo" src="./images/Untitled.png"></img> 
+    <div id="info">i</div>
     <img src="./images/Ellipse 110.png"></img> 
     <button id="start_button">Preferences</button>
     
     `
+    let info_button = document.querySelector("#info");
+    let popupVisible = false;
+    info_button.addEventListener("click", togglePopup);
+
+    function togglePopup(event) {
+
+        if (popupVisible) {
+            removePopup();
+        } else {
+            showPopup();
+        }
+    }
+
+    function showPopup() {
+        let popup = document.createElement("div");
+
+        popup.innerHTML =
+            `Step 1 : Bring your water to a boil 
+         Step 2 : Select your preferences.
+         Step 3 : Start cooking! `
+
+        wrapper1.appendChild(popup);
+        popup.classList.add("popup");
+
+        info_button.innerHTML = `X`;
+        popupVisible = true;
+    }
+    function removePopup() {
+        let popup = document.querySelector(".popup");
+        if (popup) {
+            popup.remove();
+        }
+        info_button.innerHTML = `i`;
+        popupVisible = false;
+    }
+
+
     let start_button = document.querySelector("#start_button")
     start_button.addEventListener("click", options_page);
 

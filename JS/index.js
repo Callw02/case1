@@ -75,9 +75,9 @@ function starting_page() {
         boilButton.addEventListener("click", calculateCookingTime);
     }
     let eggPreferences = {
-        consistency: 0, // Initialize with default value
-        type: 0,        // Initialize with default value
-        size: 0,        // Initialize with default value
+        consistency: 0,
+        type: 0,       
+        size: 0,        
         chilled: 0
     };
     function handleButtonClick(event) {
@@ -190,7 +190,7 @@ function starting_page() {
     }
     function startCountDown(event) {
         let cookTime = eggPreferences.consistency + eggPreferences.type + eggPreferences.size + eggPreferences.chilled;
-        timer(cookTime)
+        timer(cookTime, eggPreferences.consistency)
     }
 }
 starting_page()

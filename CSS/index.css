@@ -165,9 +165,7 @@ img {
 
 }
 
-#circleContainer,
-#egg,
-#cook_button {
+.countDownPage{
     animation: fade 1s ease forwards;
 }
 

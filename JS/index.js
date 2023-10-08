@@ -143,9 +143,11 @@ let eggPreferences = {
     size: 0,        // Initialize with default value
     chilled: 0
 };
+let quail = false;
 function handleButtonClick(event) {
     const buttonId = event.target;
     console.log(buttonId);
+
 
     if (buttonId.parentElement.id === "type") {
         const buttons = document.querySelectorAll(".option_buttons");
@@ -174,10 +176,14 @@ function handleButtonClick(event) {
 
             case "QUAIL": 160
                 eggPreferences["type"] = 160;
+                
                 break;
         }
     }
-
+    if(buttonId.textContent === "QUAIL"){
+        quail = true;
+    }
+    
     if (buttonId.parentElement.id === "size") {
         switch (buttonId.textContent) {
             case "S": 0
@@ -197,8 +203,9 @@ function handleButtonClick(event) {
         }
 
     }
+    
     if (buttonId.parentElement.id === "consistency") {
-        if (quail === true) {
+        if (quail == true) {
             switch (buttonId.textContent) {
                 case "SOFT":
                     eggPreferences["consistency"] = 0;
@@ -213,7 +220,7 @@ function handleButtonClick(event) {
                     break;
             }
 
-        }
+        }else{
         switch (buttonId.textContent) {
             case "SOFT":
                 eggPreferences["consistency"] = 360;
@@ -226,7 +233,7 @@ function handleButtonClick(event) {
             case "HARD": 600
                 eggPreferences["consistency"] = 600;
                 break;
-        }
+        }}
     }
     if (buttonId.parentElement.id === "chilled") {
         switch (buttonId.textContent) {

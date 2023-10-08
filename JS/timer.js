@@ -1,8 +1,15 @@
 function timer(timeLeft, consistency){   
+    let cook_button = document.getElementById("cook_button");
+        cook_button.textContent = "STOP!";
+
     let timer = setInterval(function(){
         let timerElement = document.querySelector("#circleContainer");
-        let cook_button = document.getElementById("cook_button");
-        cook_button.textContent = "STOP!"
+
+        if (!timerElement) {
+            clearInterval(timer); // Stop the interval if timerElement is not found
+            return;
+        }
+        
        
         let minutes = Math.floor(timeLeft / 60);
         let seconds = timeLeft % 60;
@@ -13,7 +20,7 @@ function timer(timeLeft, consistency){
         const startTime = Date.now();
         const futureTimer = startTime + setTime;
         
-        // Update the timer display
+        
         timerElement.innerHTML = `<h1>${formattedMinutes}:${formattedSeconds}</h1>`;
         console.log(`${formattedMinutes}:${formattedSeconds}`);
         
@@ -39,7 +46,7 @@ function timer(timeLeft, consistency){
             clearInterval(timer);
             let eggPicture = document.getElementById("egg");
             console.log("done!");
-            if(consistency === 10){
+            if(consistency === 360){
                 eggPicture.src = "./images/imagesoft.png";
                 eggPicture.style.width = "55%";
                 
@@ -59,6 +66,17 @@ function timer(timeLeft, consistency){
         }
         timeLeft--;
     }, 1000)
+
+    let stopButton = document.querySelector("#cook_button")
+    stopButton.addEventListener("click", stop_cooking)
+
+    function stop_cooking(event){
+        if(event.target.textContent === "STOP!"){
+            clearInterval(timer);
+            starting_page();
+        }
+    }
+    
 }
 
 function changeEggImage(imageSrc) {
@@ -70,3 +88,4 @@ function changeEggImage(imageSrc) {
       eggElement.classList.remove("wiggle");
     }, 500); 
   }
+

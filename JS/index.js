@@ -1,8 +1,10 @@
 "use strict"
+let wrapper1 = document.createElement("div");
 
 function starting_page() {
+    document.querySelector("body").innerHTML = ``;
+    wrapper1.classList.remove("wrapper2");
     let body = document.querySelector("body");
-    let wrapper1 = document.createElement("div");
     wrapper1.classList.add("wrapper1");
     body.appendChild(wrapper1);
 
@@ -13,6 +15,10 @@ function starting_page() {
     <button id="start_button">Preferences</button>
     
     `
+
+    let start_button = document.querySelector("#start_button")
+    start_button.addEventListener("click", options_page);
+
     let info_button = document.querySelector("#info");
     let popupVisible = false;
     info_button.addEventListener("click", togglePopup);
@@ -25,18 +31,17 @@ function starting_page() {
             showPopup();
         }
     }
-
     function showPopup() {
         let popup = document.createElement("div");
-
+    
         popup.innerHTML =
             `Step 1 : Bring your water to a boil 
          Step 2 : Select your preferences.
          Step 3 : Start cooking! `
-
+    
         wrapper1.appendChild(popup);
         popup.classList.add("popup");
-
+    
         info_button.innerHTML = `X`;
         popupVisible = true;
     }
@@ -49,11 +54,20 @@ function starting_page() {
         popupVisible = false;
     }
 
+}
+    
 
-    let start_button = document.querySelector("#start_button")
-    start_button.addEventListener("click", options_page);
+
+    starting_page();
+
+ 
+
+   
+
+
 
     function options_page() {
+        
         wrapper1.classList.remove("wrapper1");
         wrapper1.classList.add("wrapper2");
         wrapper1.innerHTML = `
@@ -96,10 +110,10 @@ function starting_page() {
 
         <button id="boil_button">Boil!</button>
         `;
-
+        
         const buttons = document.querySelectorAll(".option_buttons");
         buttons.forEach(button => {
-
+            
             if (button.parentElement.id !== "type") {
                 button.disabled = true;
                 button.classList.add("disabled")
@@ -108,10 +122,14 @@ function starting_page() {
         buttons.forEach(button => {
             button.addEventListener("click", handleButtonClick);
         });
-
+        
+        
         const boilButton = document.querySelector("#boil_button");
         boilButton.addEventListener("click", calculateCookingTime);
+        
     }
+    
+    
     let eggPreferences = {
         consistency: 0,
         type: 0,       
@@ -140,6 +158,9 @@ function starting_page() {
         let quail = false;
         if (buttonId.parentElement.id === "type") {
             switch (buttonId.textContent) {
+                case "CHICKEN": 
+                    eggPreferences["type"] = 0;
+                    break;
                 case "OSTRICH": 
                     eggPreferences["type"] = 3000;
                     break;
@@ -171,7 +192,7 @@ function starting_page() {
 
         }
         if (buttonId.parentElement.id === "consistency") {
-            if(quail = true){
+            if(quail === true){
                 switch (buttonId.textContent) {
                     case "SOFT": 
                         eggPreferences["consistency"] = 0;
@@ -189,7 +210,7 @@ function starting_page() {
             }
             switch (buttonId.textContent) {
                 case "SOFT": 
-                    eggPreferences["consistency"] = 10;
+                    eggPreferences["consistency"] = 360;
                     break;
 
                 case "MEDIUM": 
@@ -248,5 +269,6 @@ function starting_page() {
         let cookTime = eggPreferences.consistency + eggPreferences.type + eggPreferences.size + eggPreferences.chilled;
         timer(cookTime, eggPreferences.consistency)
     }
-}
-starting_page()
+
+    
+  

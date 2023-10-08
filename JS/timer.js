@@ -24,7 +24,7 @@ function timer(timeLeft, consistency){
         if (timeLeft === 239) {
             changeEggImage("./images/crackscrack2.png")
         }
-        if (timeLeft === 179) {
+        if (timeLeft === 5) {
             changeEggImage("./images/crackscrack3.png")
         }
         if (timeLeft === 119) {
@@ -39,7 +39,7 @@ function timer(timeLeft, consistency){
             clearInterval(timer);
             let eggPicture = document.getElementById("egg");
             console.log("done!");
-            if(consistency === 360){
+            if(consistency === 10){
                 eggPicture.src = "./images/imagesoft.png";
                 eggPicture.style.width = "55%";
                 

@@ -137,31 +137,32 @@ function starting_page() {
             }
         }
 
-
+        let quail = false;
         if (buttonId.parentElement.id === "type") {
             switch (buttonId.textContent) {
-                case "OSTRICH": 3000
+                case "OSTRICH": 
                     eggPreferences["type"] = 3000;
                     break;
 
-                case "QUAIL": 160
-                    eggPreferences["type"] = 160;
+                case "QUAIL": 
+                quail = true;
+                    eggPreferences["type"] = 120;
                     break;
             }
         }
 
         if (buttonId.parentElement.id === "size") {
             switch (buttonId.textContent) {
-                case "S": 0
+                case "S": 
                     eggPreferences["size"] = 0;
                     break;
-                case "M": 60
+                case "M": 
                     eggPreferences["size"] = 60;
                     break;
-                case "L": 120
+                case "L": 
                     eggPreferences["size"] = 120;
                     break;
-                case "XL": 180
+                case "XL": 
                     eggPreferences["size"] = 180;
                     break;
 
@@ -170,31 +171,48 @@ function starting_page() {
 
         }
         if (buttonId.parentElement.id === "consistency") {
+            if(quail = true){
+                switch (buttonId.textContent) {
+                    case "SOFT": 
+                        eggPreferences["consistency"] = 0;
+                        break;
+    
+                    case "MEDIUM": 
+                        eggPreferences["consistency"] = 40;
+                        break;
+    
+                    case "HARD": 
+                        eggPreferences["consistency"] = 150;
+                        break;
+                }
+
+            }
             switch (buttonId.textContent) {
-                case "SOFT": 360
-                    eggPreferences["consistency"] = 360;
+                case "SOFT": 
+                    eggPreferences["consistency"] = 10;
                     break;
 
-                case "MEDIUM": 480
+                case "MEDIUM": 
                     eggPreferences["consistency"] = 480;
                     break;
 
-                case "HARD": 600
+                case "HARD": 
                     eggPreferences["consistency"] = 600;
                     break;
             }
         }
         if (buttonId.parentElement.id === "chilled") {
             switch (buttonId.textContent) {
-                case "YES": 60
+                case "YES": 
                     eggPreferences["chilled"] = 60;
                     break;
-                case "NO": 0
+                case "NO": 
                     eggPreferences["chilled"] = 0;
                     break;
             }
 
         }
+        
         console.log(eggPreferences);
 
     }

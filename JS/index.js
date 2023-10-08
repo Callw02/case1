@@ -66,6 +66,8 @@ function starting_page() {
             </div>
         </div>
 
+        <div class="seperator"></div>
+
         <div class="option_containers">
             <div>SIZE</div> 
             <div id="size" class="inner_container">
@@ -75,6 +77,8 @@ function starting_page() {
                 <button  class="option_buttons">XL</button>
             </div>
         </div>
+
+        <div class="seperator"></div>
         
         <div class="option_containers">
             <div>CONSISTENCY</div>
@@ -85,6 +89,7 @@ function starting_page() {
             </div>
         </div>
 
+        <div class="seperator"></div>
         
         <div class="option_containers">
             <div>CHILLED</div>
@@ -93,6 +98,8 @@ function starting_page() {
                 <button class="option_buttons">NO</button>
             </div>
         </div>
+
+        <div class="seperator"></div>
 
         <button id="boil_button">Boil!</button>
         `;
@@ -113,9 +120,9 @@ function starting_page() {
         boilButton.addEventListener("click", calculateCookingTime);
     }
     let eggPreferences = {
-        consistency: 0,
-        type: 0,       
-        size: 0,        
+        consistency: 0, // Initialize with default value
+        type: 0,        // Initialize with default value
+        size: 0,        // Initialize with default value
         chilled: 0
     };
     function handleButtonClick(event) {
@@ -137,32 +144,31 @@ function starting_page() {
             }
         }
 
-        let quail = false;
+
         if (buttonId.parentElement.id === "type") {
             switch (buttonId.textContent) {
-                case "OSTRICH": 
+                case "OSTRICH": 3000
                     eggPreferences["type"] = 3000;
                     break;
 
-                case "QUAIL": 
-                quail = true;
-                    eggPreferences["type"] = 120;
+                case "QUAIL": 160
+                    eggPreferences["type"] = 160;
                     break;
             }
         }
 
         if (buttonId.parentElement.id === "size") {
             switch (buttonId.textContent) {
-                case "S": 
+                case "S": 0
                     eggPreferences["size"] = 0;
                     break;
-                case "M": 
+                case "M": 60
                     eggPreferences["size"] = 60;
                     break;
-                case "L": 
+                case "L": 120
                     eggPreferences["size"] = 120;
                     break;
-                case "XL": 
+                case "XL": 180
                     eggPreferences["size"] = 180;
                     break;
 
@@ -171,48 +177,31 @@ function starting_page() {
 
         }
         if (buttonId.parentElement.id === "consistency") {
-            if(quail = true){
-                switch (buttonId.textContent) {
-                    case "SOFT": 
-                        eggPreferences["consistency"] = 0;
-                        break;
-    
-                    case "MEDIUM": 
-                        eggPreferences["consistency"] = 40;
-                        break;
-    
-                    case "HARD": 
-                        eggPreferences["consistency"] = 150;
-                        break;
-                }
-
-            }
             switch (buttonId.textContent) {
-                case "SOFT": 
-                    eggPreferences["consistency"] = 10;
+                case "SOFT": 360
+                    eggPreferences["consistency"] = 360;
                     break;
 
-                case "MEDIUM": 
+                case "MEDIUM": 480
                     eggPreferences["consistency"] = 480;
                     break;
 
-                case "HARD": 
+                case "HARD": 600
                     eggPreferences["consistency"] = 600;
                     break;
             }
         }
         if (buttonId.parentElement.id === "chilled") {
             switch (buttonId.textContent) {
-                case "YES": 
+                case "YES": 60
                     eggPreferences["chilled"] = 60;
                     break;
-                case "NO": 
+                case "NO": 0
                     eggPreferences["chilled"] = 0;
                     break;
             }
 
         }
-        
         console.log(eggPreferences);
 
     }
@@ -246,7 +235,7 @@ function starting_page() {
     }
     function startCountDown(event) {
         let cookTime = eggPreferences.consistency + eggPreferences.type + eggPreferences.size + eggPreferences.chilled;
-        timer(cookTime, eggPreferences.consistency)
+        timer(cookTime)
     }
 }
 starting_page()

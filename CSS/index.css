@@ -1,7 +1,7 @@
 #circleContainer {
     border-radius: 50%;
-    width: 150px;
-    height: 150px;
+    width: 131px;
+    height: 131px;
     background-color: #D9AC84;
     border: 10px solid #BF5D39;
     ;
@@ -10,12 +10,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
+    font-family: monospace;
 }
 
 body {
     background-color: #D9AC84;
     margin: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .wrapper1 {
@@ -30,6 +31,10 @@ body {
 .option_containers div {
     color: #BF5D39;
     font-family: Arial, Helvetica, sans-serif
+}
+
+button {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 #logo {
@@ -58,16 +63,17 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 18px;
+    padding-top: 29px;
 }
+
+
 
 .option_containers {
     width: 300px;
     height: 80px;
     background-color: #D9AC84;
-    border: 5px solid #BF5D39;
     border-radius: 10px;
     display: flex;
     justify-content: center;
@@ -75,6 +81,7 @@ body {
     flex-direction: column;
     padding: 5px;
     gap: 10px;
+
 }
 
 #boil_button {
@@ -84,6 +91,7 @@ body {
     background-color: #BF5D39;
     border: 0px;
     color: #D9AC84;
+    margin-top: 15px;
 }
 
 :hover#boil_button {
@@ -108,7 +116,11 @@ body {
     border-radius: 10px;
     color: #D9AC84;
     flex-grow: 1;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
 
+.option_containers>div {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 :hover.option_buttons {
@@ -228,7 +240,15 @@ img {
     position: absolute;
     top: 60px;
     color: #D9AC84;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 13px;
     border: 1px solid black;
+}
+
+.seperator {
+    height: 4px;
+    width: 90%;
+    background-color: #BF5D39;
+    border-radius: 20px;
+
 }

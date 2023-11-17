@@ -1,6 +1,8 @@
 "use strict"
 let wrapper1 = document.createElement("div");
 
+
+
 function starting_page() {
     document.querySelector("body").innerHTML = ``;
     wrapper1.classList.remove("wrapper2");

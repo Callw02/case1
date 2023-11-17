@@ -252,3 +252,29 @@ img {
     border-radius: 20px;
 
 }
+#blocker1{
+    width: 100%;
+    background-color: #D9AC84;
+    height: 58px;
+  
+    z-index: 1;
+position: fixed;
+}
+#blocker2{
+    width: 100%;
+    background-color: #D9AC84;
+    height: 55px;
+   
+    z-index: 1;
+position: fixed;
+top: 520px;
+}
+#play{
+    height: 50px;
+    width: 50px;
+    background-color: blue;
+
+}
+iFrame{
+    pointer-events: none;
+}
